@@ -1,0 +1,55 @@
+﻿@model ST10090394_PROG7311_POE_Part2.Models.FarmerModel
+
+@{
+    ViewData["Title"] = "Add A Farmer";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+@* <h4>Add a new Farmer</h4>
+ *@
+<hr />
+
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="AddFarmer" asp-controller="Employee" novalidate>
+            <div class="form-group">
+                <label asp-for="FullName" class="control-label">Full Name</label>
+                <input asp-for="FullName" class="form-control" />
+                <span asp-validation-for="FullName" class="text-danger" style="font-size: 0.8em; color: #aaa;"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="ContactNumber" class="control-label">Contact Number</label>
+                <input asp-for="ContactNumber" class="form-control" />
+                <span asp-validation-for="ContactNumber" class="text-danger" style="font-size: 0.8em; color: #aaa;"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Address" class="control-label">Address</label>
+                <input asp-for="Address" class="form-control" />
+                <span asp-validation-for="Address" class="text-danger" style="font-size: 0.8em; color: #aaa;"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Email" class="control-label">Email</label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger" style="font-size: 0.8em; color: #aaa;"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Password" class="control-label">Password</label>
+                <input asp-for="Password" class="form-control" type="password" />
+                <span asp-validation-for="Password" class="text-danger" style="font-size: 0.8em; color: #aaa;"></span>
+            </div>
+
+            <div class="mb-3"></div>
+
+            <div class="form-group">
+                <input type="submit" value="Add Farmer" class="btn btn-primary" />
+                &nbsp;&nbsp;&nbsp;
+                <a href="@Url.Action("EmployeeIndex", "Employee")" class="btn btn-primary">Employee Page</a>
+            </div>
+        </form>
+    </div>
+</div>

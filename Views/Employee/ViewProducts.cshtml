@@ -1,0 +1,66 @@
+﻿@model IEnumerable<ST10090394_PROG7311_POE_Part2.Models.Products>
+
+@{
+    ViewData["Title"] = "View Products";
+}
+<h1>@ViewData["Title"]</h1>
+
+<div class="container">
+   @*  <h1>@ViewData["Title"]</h1> *@
+
+    <form asp-controller="Employee" asp-action="ViewProducts" method="post" class="form-inline">
+        <div class="form-group mb-2">
+            <label for="farmerId" class="mr-2">Farmer:</label>
+            <select id="farmerId" name="farmerId" asp-items="ViewBag.Farmers" class="form-control"></select>
+        </div>
+        <div class="form-group mb-2">
+            <label for="startDate" class="mr-2">Start Date:</label>
+            <input type="date" id="startDate" name="startDate" class="form-control" />
+        </div>
+        <div class="form-group mb-2">
+            <label for="endDate" class="mr-2">End Date:</label>
+            <input type="date" id="endDate" name="endDate" class="form-control" />
+        </div>
+        <div class="form-group mb-2">
+            <label for="category" class="mr-2">Product Category:</label>
+            <select id="category" name="category" class="form-control">
+                <option value="">All Categories</option>
+                <option value="Vegetable">Vegetable</option>
+                <option value="Fruit">Fruit</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary mb-2">Search</button>
+    </form>
+
+    <a href="@Url.Action("EmployeeIndex", "Employee")" class="btn btn-primary mb-2">Employee Page</a>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Product Name</th>
+                <th>Product Category</th>
+                <th>Production Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null)
+            {
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.ProductName</td>
+                        <td>@item.ProductCategory</td>
+                        <td>@item.ProductionDate.ToShortDateString()</td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="3">No items to display</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

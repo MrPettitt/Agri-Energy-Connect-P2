@@ -1,0 +1,39 @@
+﻿@model ST10090394_PROG7311_POE_Part2.Models.Products
+
+@{
+    ViewData["Title"] = "Add Product";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<hr />
+
+<div class="row">
+    <div class="col-md-6">
+        <form asp-controller="Farmer" asp-action="AddProductView" method="post" novalidate>
+            <div class="form-group">
+                <label asp-for="ProductName" class="control-label">Product Name</label>
+                <input asp-for="ProductName" class="form-control" />
+                <span asp-validation-for="ProductName" class="text-danger" style="font-size: 0.8em; color: #aaa;"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="ProductCategory" class="control-label">Product Category</label>
+                <input asp-for="ProductCategory" class="form-control" />
+                <span asp-validation-for="ProductCategory" class="text-danger" style="font-size: 0.8em; color: #aaa;"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="ProductionDate" class="control-label">Production Date</label>
+                <input asp-for="ProductionDate" class="form-control" />
+                <span asp-validation-for="ProductionDate" class="text-danger" style="font-size: 0.8em; color: #aaa;"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Add Product" class="btn btn-primary" />
+                &nbsp;&nbsp;&nbsp;
+                <a asp-controller="Farmer" asp-action="FarmerIndex" class="btn btn-primary">Back to Farmer Page</a>
+            </div>
+        </form>
+    </div>
+</div>

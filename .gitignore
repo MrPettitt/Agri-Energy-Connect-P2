@@ -1,0 +1,13 @@
+# Visual Studio temporary files
+.vs/
+*.user
+*.suo
+
+# Build outputs
+bin/
+obj/
+
+# Others
+*.dbmdl
+*.pdb
+*.log

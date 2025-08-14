@@ -1,0 +1,17 @@
+﻿@{
+    ViewData["Title"] = "Employee Page";
+}
+
+<h2>Employee Page</h2>
+<p>Select from the options bellow.</p>
+
+<!-- Buttons to navigate to the AddFarmer and ViewProducts views -->
+<div>
+    <form asp-controller="Employee" asp-action="AddFarmer" style="display: inline-block; margin-right: 10px;">
+        <input type="submit" value="Add a Farmer" class="btn btn-primary" />
+    </form>
+
+    <form asp-controller="Employee" asp-action="ViewProducts" style="display: inline-block;">
+        <input type="submit" value="View Farmer's' Products" class="btn btn-primary" />
+    </form>
+</div>
