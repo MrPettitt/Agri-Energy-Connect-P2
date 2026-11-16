@@ -42,3 +42,7 @@ Agri-Energy Connect is an ASP.NET Core Web App MVC project designed to connect f
 
 ## Contributors
 - [Richard Pettitt](https://github.com/MrPettitt)
+
+## License
+
+Released under the [MIT License](LICENSE).
